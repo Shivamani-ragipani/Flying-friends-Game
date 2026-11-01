@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#060a1f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>Flying Friends</title>
+  <link rel="icon" href="./assets/images/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="stage" data-state="loading">
+    <canvas id="game"></canvas>
+
+    <!-- HUD -->
+    <div id="hud">
+      <div id="scoreWrap">
+        <div id="score">0</div>
+        <div id="best">BEST 0</div>
+      </div>
+
+      <button id="pauseBtn" class="icon-btn" type="button" aria-label="Pause">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg>
+      </button>
+
+      <button id="soundBtn" class="icon-btn" type="button" aria-label="Sound on" aria-pressed="true">
+        <svg class="icon-on" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/>
+        </svg>
+        <svg class="icon-off" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="m22 9-6 6M16 9l6 6"/>
+        </svg>
+      </button>
+    </div>
+
+    <div id="countdown" aria-live="assertive"></div>
+
+    <section id="loading" class="overlay">
+      <div class="spinner"></div>
+      <p class="loading-text">Loading</p>
+    </section>
+
+    <!-- Character selection: tapping a character starts the game. -->
+    <section id="select" class="overlay hidden">
+      <div class="brand">Flying Friends</div>
+      <h1 class="select-title">Choose Your Character</h1>
+      <p class="sub">Tap a Character — the flight starts instantly.</p>
+      <div id="cards" class="cards"></div>
+      <p class="menu-best">Best <b id="menuBest">0</b></p>
+    </section>
+
+    <section id="pause" class="overlay hidden">
+      <h2 class="over-title pause-title">Paused</h2>
+      <button id="resumeBtn" class="btn" type="button">Resume</button>
+      <button id="pauseHomeBtn" class="btn secondary" type="button">Home</button>
+    </section>
+
+    <section id="gameover" class="overlay hidden">
+      <h2 class="over-title">Game Over</h2>
+      <p id="roast" class="roast"></p>
+      <div class="panel go-panel">
+        <img id="goChar" class="go-char" alt="" draggable="false">
+        <div class="row"><span>Score</span><b id="finalScore">0</b></div>
+        <div class="row"><span>Best</span><b id="finalBest">0</b></div>
+        <div id="newBest" class="badge hidden">New best!</div>
+      </div>
+      <button id="restartBtn" class="btn" type="button">Restart</button>
+      <button id="homeBtn" class="btn secondary" type="button">Home</button>
+    </section>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/save.js"></script>
+  <script src="js/assets.js"></script>
+  <script src="js/characters.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/roasts.js"></script>
+  <script src="js/input.js"></script>
+  <script src="js/physics.js"></script>
+  <script src="js/difficulty.js"></script>
+  <script src="js/animation.js"></script>
+  <script src="js/obstacles.js"></script>
+  <script src="js/collision.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/sprites.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
